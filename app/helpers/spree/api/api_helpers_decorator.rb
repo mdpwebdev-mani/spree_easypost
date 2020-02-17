@@ -7,9 +7,9 @@ module Spree
 
         @@scan_form_attributes = [:stock_location_id]
         
-        @@shipment_attributes.push(:tracking_label)
+        #@@shipment_attributes.push(:tracking_label)
 
-        @@stock_location_attributes.push(:time_zone)
+        #@@stock_location_attributes.push(:time_zone)
     end
   end
 end
