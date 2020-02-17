@@ -17,8 +17,8 @@ module SpreeEasypost
        preference :customs_signer, :string, default: ''
        preference :customs_contents_type, :string, default: 'merchandise'
        preference :customs_eel_pfc, :string, default: 'NOEEI 30.37(a)'
-       preference :carrier_accounts_shipping, :string, default: ''
-       preference :carrier_accounts_returns, :string, default: ''
+       preference :carrier_accounts_shipping, :string, default: Rails.application.credentials.dig(:easypost, :carrier_accounts)&.map{|k,v|v}&.join(',')
+       preference :carrier_accounts_returns, :string, default: Rails.application.credentials.dig(:easypost, :carrier_accounts)&.map{|k,v|v}&.join(',')
        preference :endorsement_type, :string, default: 'RETURN_SERVICE_REQUESTED'
        preference :returns_stock_location_id, :integer, default: 0
      end
