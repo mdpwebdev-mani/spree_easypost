@@ -7,7 +7,6 @@ module Spree
               begin
                   find_and_update_shipment
                   unless @shipment.tracking_label?
-                      raise NotImplementedError 
                       @shipment.buy_easypost_rate
                       @shipment.save!
                       #unless @shipment.shipped?
