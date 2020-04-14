@@ -9,9 +9,9 @@ module Spree
                     unless @shipment.tracking_label?
                         @shipment.buy_easypost_rate
                         @shipment.save!
-                        unless @shipment.shipped?
-                            @shipment.ship!
-                        end
+                        #unless @shipment.shipped?
+                            #@shipment.ship!
+                        #end
                     end
                     respond_with(@shipment, default_template: :show)
                 rescue ::EasyPost::Error => e
