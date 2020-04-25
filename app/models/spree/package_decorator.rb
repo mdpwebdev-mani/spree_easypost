@@ -20,7 +20,7 @@ module Spree
         if shipment.nil?
           order.number
         else
-          shipment.number
+          "#{order.number}-#{shipment.number}"
         end
       end
 
@@ -75,7 +75,8 @@ module Spree
           print_custom_1_barcode: true,
           print_custom_2: build_sku_list,
           print_custom_2_barcode: false,
-          endorsement: Spree::Config[:endorsement_type]
+          endorsement: Spree::Config[:endorsement_type],
+          label_format: 'pdf'
         }
       end
 

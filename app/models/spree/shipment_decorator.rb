@@ -32,7 +32,7 @@ Spree::Shipment.class_eval do
       # Purchase the postage unless it was purchased before
       easypost_shipment.buy(rate) unless self.tracking?
       self.tracking = easypost_shipment.tracking_code
-      self.tracking_label = easypost_shipment.postage_label({label_format: 'pdf'}).label_url
+      self.tracking_label = easypost_shipment.postage_label.label_url
     end
 
     private
